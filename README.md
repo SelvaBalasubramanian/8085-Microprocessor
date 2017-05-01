@@ -4,3 +4,5 @@ It is a basic 8085 microprocessor simulator which simulates 8085 programs,suppor
 and provide a clear view of memory and register values.
 
 Developed using java and java swing for GUI.
+
+NOTE : have to set location of opcode.txt correctly!! 
