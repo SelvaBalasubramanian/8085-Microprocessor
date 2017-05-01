@@ -5,4 +5,4 @@ and provide a clear view of memory and register values.
 
 Developed using java and java swing for GUI.
 
-NOTE : have to set location of opcode.txt inside the function "out_mem_set()" and line no is 1768.
+NOTE : have to set location of opcode.txt inside the function "out_mem_set()"!!!
