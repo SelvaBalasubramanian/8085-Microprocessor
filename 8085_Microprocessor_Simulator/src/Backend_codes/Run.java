@@ -90,7 +90,7 @@ public class Run implements ActionListener {
         DefaultTableModel m = (DefaultTableModel) MF.jTable4.getModel();
         m.setRowCount(0);
         m.setRowCount(250);
-        
+
     }
 
     public void process() {
@@ -135,7 +135,7 @@ public class Run implements ActionListener {
         l = opcodeList.size();
         copy();
         k = 0;
-        
+
         if (runall == 1) {
             while (k < line.length) {
                 Assemble();
@@ -269,8 +269,8 @@ public class Run implements ActionListener {
         } else if (opr.equals("CALL")) {
             call(par);
         } else if (opr.equals("NOP")) {
-                
-        } 
+
+        }
         else if (opr.equals("RET")) {
             //   MF.jTextPane1.setText(Integer.toString(pre_k));
             k = k_ret.pop();
@@ -291,7 +291,7 @@ public class Run implements ActionListener {
 
         set_reg_values();
         MF.jLabel38.setText(opr +" "+ par);
-        
+
 
     }//assemble
 
@@ -662,6 +662,7 @@ public class Run implements ActionListener {
 
     public void ora(String parameter) {
         ora1 = 1;
+        ora1 = 1;
         if (parameter.equals("A")) {
             set_ana(A);
         } else if (parameter.equals("B")) {
@@ -817,7 +818,7 @@ public class Run implements ActionListener {
         rar1 = 0;
     }
 
-    //                                ******DATA TRANSFER OPERATIONS********* 
+    //                                ******DATA TRANSFER OPERATIONS*********
     public void mov(String parameter) {
 
         switch (parameter) {
@@ -1731,7 +1732,7 @@ public class Run implements ActionListener {
     }
 
     public void out_mem_set() {
-      
+
         DefaultTableModel m = (DefaultTableModel) MF.jTable3.getModel();
         String temp, mnemonics, temp_pc, temp_par[], temp_label = "";
         int bytee, b = 0;
@@ -1837,7 +1838,7 @@ public class Run implements ActionListener {
                             }
                         }
 
-                        //   else 
+                        //   else
                         //  cont++;
                     } catch (ArrayIndexOutOfBoundsException ex) {
                         JOptionPane.showMessageDialog(MF.jTextPane1, "Error at line " + Integer.toString(k + 1) + " : " + line[k]);
@@ -1877,14 +1878,14 @@ public class Run implements ActionListener {
     }
 
     public void set_list_mem() {
-          
-        int i =0;         
+
+        int i =0;
         for (opcode_pc tm : opcodeList) {
             i = 0;
             if (tm.label.isEmpty() == false) {
                 String parr = tm.address;
                 for (opcode_pc rm : opcodeList) {
-                      
+
                     if (rm.par.equals(tm.label)) {
                         tm = opcodeList.get(i + 1);
                         tm.value = parr.substring(2, 4);
@@ -1901,7 +1902,7 @@ public class Run implements ActionListener {
         }
         i = 0;
         for (opcode_pc tm : opcodeList) {
-            
+
             DefaultTableModel dm = (DefaultTableModel) MF.jTable3.getModel();
 
             DefaultTableModel dm2 = (DefaultTableModel) MF.jTable4.getModel();
@@ -1911,7 +1912,7 @@ public class Run implements ActionListener {
             } else {
                 dm2.setValueAt(" ", i, 0);
             }
-           
+
             dm.setValueAt(tm.address, i, 0);
             dm.setValueAt(tm.value, i, 1);
 
@@ -1939,7 +1940,7 @@ public class Run implements ActionListener {
         add & sub finaly
         and  flag functions
         M memory value is not yet completely set
-        mov & mvi instructions for memory 
+        mov & mvi instructions for memory
          check for stack pointer instructions
          jmp if condition not yet set;
 
