@@ -1766,7 +1766,7 @@ public class Run implements ActionListener {
             }
 
             try {
-                FileReader fileReader = new FileReader("E:\\Selva\\Backup\\opcode.txt");
+                FileReader fileReader = new FileReader("./opcode.txt");
                 try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
                     try {
                         while ((temp = bufferedReader.readLine()) != null) {
